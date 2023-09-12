@@ -1,0 +1,25 @@
+h2 {
+  border-bottom: 1px solid #999;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+section {
+  max-width: 33rem;
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.permissions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  div {
+    display: flex;
+    gap: 0.6rem;
+    font-size: 1.5rem;
+    color: #6364af;
+  }
+}
