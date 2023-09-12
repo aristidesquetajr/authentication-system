@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<div class="cardsContactos">
+  <div class="cardContacto" *ngFor="let contacto of contactos">
+    <div class="photo">
+      <img src={{contacto.avatarUrl}} alt={{contacto.name}}>
+    </div>
+    <div class="info">
+      <h3>{{ contacto.name }}</h3>
+      <p>{{ contacto.phone }}</p>
+    </div>
+  </div>
+</div>
