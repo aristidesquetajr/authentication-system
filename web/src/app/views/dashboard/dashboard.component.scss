@@ -27,16 +27,6 @@
   }
 }
 
-.cardsContactos {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  .cardContacto {
-    display: flex;
-
-    .photo {
-      margin-right: 10px;
-    }
-  }
+table tbody tr {
+  cursor: pointer;
 }

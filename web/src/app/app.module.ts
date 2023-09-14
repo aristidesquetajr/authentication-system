@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import locatePtAO from '@angular/common/locales/pt-AO';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,8 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { PermissionsComponent } from './views/permissions/permissions.component';
 import { ModalComponent } from './components/modal/modal.component';
 
+registerLocaleData(locatePtAO);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,14 +21,15 @@ import { ModalComponent } from './components/modal/modal.component';
     DashboardComponent,
     HeaderComponent,
     PermissionsComponent,
-    ModalComponent
+    ModalComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-AO',
+    },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

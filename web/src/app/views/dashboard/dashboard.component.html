@@ -4,25 +4,24 @@
   <nav>
     <button *ngIf="hasCreatePermission" type="button" data-bs-toggle="modal" data-bs-target="#modalCreateProduct"
       class="btn btn-primary">Adicionar</button>
-    <button *ngIf="hasEditPermission" type="button">
-      Editar
-    </button>
+    <button *ngIf="hasEditPermission" type="button" data-bs-toggle="modal" data-bs-target="#modalEditProduct"
+      class="btn btn-secondary">Editar</button>
     <button *ngIf="hasDeletePermission" type="button">
       Deletar
     </button>
   </nav>
 
-  <table>
-    <thead>
+  <table class="table table-hover">
+    <thead class="table-light">
       <tr>
         <th>Nome</th>
         <th>Preço</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of products" data-bs-toggle="modal" data-bs-target="#modalEditProduct">
         <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
+        <td>{{ product.price | currency: 'AOA' }}</td>
       </tr>
     </tbody>
   </table>
@@ -30,3 +29,5 @@
 
 <!-- Modal -->
 <app-modal *ngIf="hasCreatePermission" idModal="modalCreateProduct" titleModal="Cadastrar produto"></app-modal>
+
+<app-modal *ngIf="hasEditPermission" idModal="modalEditProduct" titleModal="Editar produto"></app-modal>
