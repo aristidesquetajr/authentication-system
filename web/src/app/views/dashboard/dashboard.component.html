@@ -1,19 +1,27 @@
-<app-header text="Meus Contactos"></app-header>
+<app-header text="Meus Produtos"></app-header>
 
 <div class="container">
   <button *ngIf="hasCreatePermission">
     Adicionar
   </button>
 
-  <div class="cardsContactos">
-    <div class="cardContacto" *ngFor="let contacto of contactos">
-      <div class="photo">
-        <img src={{contacto.avatarUrl}} alt={{contacto.name}}>
-      </div>
-      <div class="info">
-        <h3>{{ contacto.name }}</h3>
-        <p>{{ contacto.phone }}</p>
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button *ngIf="hasEditPermission">Editar</button>
+          <button *ngIf="hasDeletePermission">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
