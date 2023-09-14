@@ -1,3 +1,5 @@
+import 'bootstrap/dist/js/bootstrap.bundle';
+
 import { Component, OnInit } from '@angular/core';
 import { Permission } from 'src/app/models/Permission';
 import { Product } from 'src/app/models/Product';
