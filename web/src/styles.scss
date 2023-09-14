@@ -5,7 +5,6 @@
 }
 
 body {
-  background: #27262c;
   -webkit-font-shoothing: antialiased;
 }
 
@@ -23,7 +22,7 @@ button {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   transition: filter 0.2s;
 
   &:hover {

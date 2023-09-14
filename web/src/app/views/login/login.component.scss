@@ -4,6 +4,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #27262c;
 }
 
 form {
@@ -68,6 +69,7 @@ form {
     font-size: 1.5rem;
     margin-top: 4rem;
     border: 0;
+    border-radius: 4px;
     background: #4044ed;
     color: #fff;
     padding-block: 0.625rem;

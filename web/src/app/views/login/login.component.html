@@ -1,14 +1,14 @@
 <section>
-  <form name="formLogin" method="post">
+  <form [formGroup]="formLogin" (ngSubmit)="signIn()">
     <h1>Login</h1>
 
     <div class="form-group">
-      <input type="text" name="email" id="email" autocomplete="email" required>
+      <input type="text" name="email" id="email" autocomplete="email" formControlName="email" required>
       <label for="email">Email</label>
     </div>
 
     <div class="form-group">
-      <input type="password" name="senha" id="senha" required>
+      <input type="password" name="senha" id="senha" formControlName="pass" required>
       <label for="senha">Password</label>
     </div>
 
