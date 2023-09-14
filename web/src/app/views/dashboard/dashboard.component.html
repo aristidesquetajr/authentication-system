@@ -1,26 +1,29 @@
 <app-header text="Meus Produtos"></app-header>
 
 <div class="container">
-  <button *ngIf="hasCreatePermission">
-    Adicionar
-  </button>
+  <nav>
+    <button *ngIf="hasCreatePermission">
+      Adicionar
+    </button>
+    <button *ngIf="hasEditPermission">
+      Editar
+    </button>
+    <button *ngIf="hasDeletePermission">
+      Deletar
+    </button>
+  </nav>
 
   <table>
     <thead>
       <tr>
         <th>Nome</th>
         <th>Preço</th>
-        <th>Ação</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let product of products">
         <td>{{ product.name }}</td>
         <td>{{ product.price }}</td>
-        <td>
-          <button *ngIf="hasEditPermission">Editar</button>
-          <button *ngIf="hasDeletePermission">Deletar</button>
-        </td>
       </tr>
     </tbody>
   </table>
