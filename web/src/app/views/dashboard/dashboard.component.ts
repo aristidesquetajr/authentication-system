@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contacto } from 'src/app/models/Contacto';
+import { Permission } from 'src/app/models/Permission';
+import { getPermissions } from 'src/app/utils/localStorage';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +9,9 @@ import { Contacto } from 'src/app/models/Contacto';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
+  private permissions: Permission[] = []
+  hasCreatePermission = false
 
   contactos: Contacto[] = [
     new Contacto({
@@ -22,5 +27,7 @@ export class DashboardComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+    this.permissions = getPermissions()
+    this.hasCreatePermission = this.permissions[0].checked
   }
 }
