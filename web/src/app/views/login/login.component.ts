@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
 import { getUser } from 'src/app/utils/localStorage';
+import { OnInitUser } from 'src/app/utils/onitUser';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    OnInitUser();
     this.user = getUser();
   }
 

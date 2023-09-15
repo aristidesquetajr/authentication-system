@@ -4,7 +4,7 @@ import { User } from '../models/User';
 export function getUser(): User {
   const user = window.localStorage.getItem('user');
 
-  return user ? JSON.parse(user) : {};
+  return user ? JSON.parse(user) : null;
 }
 
 export function setUser(user: User) {
