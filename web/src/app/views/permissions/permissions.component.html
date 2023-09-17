@@ -1,13 +1,14 @@
 <app-header text="Permissões"></app-header>
 
 <section>
-  <h2>{{ user.name }}</h2>
+  <h2>Produtos</h2>
 
-  <div class="permissions">
-    <div *ngFor="let p of permissions">
-      <input type="checkbox" [name]="p.label" [id]="p.label" [checked]="p.checked"
-        (change)="changePermission(p.label, $event)">
-      <label [for]="p.label">{{p.label}}</label>
-    </div>
-  </div>
+  <ul class="permissions">
+    <li *ngFor="let p of permissions">
+      <input type="checkbox" [id]="p.label" [checked]="p.checked" (change)="changePermission(p.label, $event)" />
+      <label [for]="p.label">
+        {{p.label}}
+      </label>
+    </li>
+  </ul>
 </section>

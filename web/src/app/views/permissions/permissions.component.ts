@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Permission } from 'src/app/models/Permission';
-import { User } from 'src/app/models/User';
-import { getPermissions, getUser, setPermissions } from 'src/app/utils/localStorage';
+import { getPermissions, setPermissions } from 'src/app/utils/localStorage';
 
 @Component({
   selector: 'app-permissions',
@@ -10,11 +9,9 @@ import { getPermissions, getUser, setPermissions } from 'src/app/utils/localStor
 })
 export class PermissionsComponent implements OnInit {
   permissions: Permission[] = [];
-  user = {} as User
 
   ngOnInit(): void {
     this.permissions = getPermissions();
-    this.user = getUser()
   }
 
   changePermission(label: string, event: Event) {

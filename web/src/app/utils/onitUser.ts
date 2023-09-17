@@ -7,15 +7,15 @@ export function OnInitUser() {
     pass: 'admin123',
     permissions: [
       {
-        label: 'Criacao',
+        label: 'Criação',
         checked: true,
       },
       {
-        label: 'Delecao',
+        label: 'Deleção',
         checked: true,
       },
       {
-        label: 'Edicao',
+        label: 'Edição',
         checked: true,
       },
     ],
