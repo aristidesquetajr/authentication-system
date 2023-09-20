@@ -5,7 +5,7 @@
 
   <ul class="permissions">
     <li *ngFor="let p of permissions">
-      <input type="checkbox" [id]="p.label" [checked]="p.checked" (change)="changePermission(p.label, $event)" />
+      <input type="checkbox" [id]="p.label" [checked]="p.checked" (change)="changePermission($event)" />
       <label [for]="p.label">
         {{p.label}}
       </label>

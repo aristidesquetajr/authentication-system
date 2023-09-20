@@ -14,11 +14,11 @@ export class PermissionsComponent implements OnInit {
     this.permissions = getPermissions();
   }
 
-  changePermission(label: string, event: Event) {
-    const { checked } = event.target as HTMLInputElement;
+  changePermission(event: Event) {
+    const { checked, id } = event.target as HTMLInputElement;
 
     const newPermissions = this.permissions.map((permission) => {
-      if (permission.label === label) {
+      if (permission.label === id) {
         permission.checked = checked;
       }
 
