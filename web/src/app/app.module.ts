@@ -11,6 +11,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { PermissionsComponent } from './views/permissions/permissions.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { HasPermissionDirective } from './directives/has-permission.directive';
 
 registerLocaleData(locatePtAO);
 
@@ -22,6 +23,7 @@ registerLocaleData(locatePtAO);
     HeaderComponent,
     PermissionsComponent,
     ModalComponent,
+    HasPermissionDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [

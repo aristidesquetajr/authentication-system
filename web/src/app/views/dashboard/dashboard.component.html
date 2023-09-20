@@ -2,11 +2,11 @@
 
 <div class="container">
   <nav>
-    <button *ngIf="hasCreatePermission" type="button" data-bs-toggle="modal" data-bs-target="#modalCreateProduct"
+    <button *appHasPermission="'Criação'" type="button" data-bs-toggle="modal" data-bs-target="#modalCreateProduct"
       class="btn btn-primary">Adicionar</button>
-    <button *ngIf="hasEditPermission" type="button" data-bs-toggle="modal" data-bs-target="#modalEditProduct"
+    <button *appHasPermission="'Edição'" type="button" data-bs-toggle="modal" data-bs-target="#modalEditProduct"
       class="btn btn-secondary">Editar</button>
-    <button *ngIf="hasDeletePermission" type="button">
+    <button *appHasPermission="'Deleção'" type="button">
       Deletar
     </button>
   </nav>
@@ -28,6 +28,6 @@
 </div>
 
 <!-- Modal -->
-<app-modal *ngIf="hasCreatePermission" idModal="modalCreateProduct" titleModal="Cadastrar produto"></app-modal>
+<app-modal *appHasPermission="'Criação'" idModal="modalCreateProduct" titleModal="Cadastrar produto"></app-modal>
 
-<app-modal *ngIf="hasEditPermission" idModal="modalEditProduct" titleModal="Editar produto"></app-modal>
+<app-modal *appHasPermission="'Edição'" idModal="modalEditProduct" titleModal="Editar produto"></app-modal>
