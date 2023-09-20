@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Permission } from '../models/Permission';
-import { getPermissions } from '../utils/localStorage';
+import { getPermissions, getUser } from '../utils/localStorage';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +26,9 @@ export class AuthService {
     }
 
     return permission.checked;
+  }
+
+  hasLogged() {
+    return getUser()
   }
 }
